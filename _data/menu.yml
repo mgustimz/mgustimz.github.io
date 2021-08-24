@@ -10,4 +10,7 @@ entries:
       - title: twitter 
         url: https://twitter.com/fleetimee
 
+  - title: my tech blog ?(sort of).
+    post_list : true
+
  
