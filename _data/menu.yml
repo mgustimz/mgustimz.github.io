@@ -3,14 +3,14 @@
 entries:
   - title: me
     entries:
-      - title: email 
+      - title: email 📧
         url: mailto:novian.andika@students.amikom.ac.id
-      - title: github 
+      - title: github 💻
         url: https://github.com/fleetimee/
-      - title: twitter 
+      - title: twitter 🐦
         url: https://twitter.com/fleetimee
 
-  - title: my tech blog ?(sort of).
+  - title: my blog ?(sort of).
     post_list : true
 
  
