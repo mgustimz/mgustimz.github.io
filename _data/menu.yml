@@ -3,8 +3,14 @@
 entries:
   - title: me
     entries:
+      - title: more about me 
+        url: /about
       - title: email 📧
-        url: mailto:novian.andika@students.amikom.ac.id
+        url: mailto:hello@fleetime.my.id
+      - title: project
+        url: /project
+      - title: linkedin
+        url: https://www.linkedin.com/in/fleetime/
       - title: github 💻
         url: https://github.com/fleetimee/
       - title: twitter 🐦
