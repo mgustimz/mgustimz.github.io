@@ -1,19 +1,17 @@
-
-
 entries:
   - title: me
     entries:
       - title: more about me 
         url: /about
-      - title: email 📧
+      - title: email 
         url: mailto:hello@fleetime.my.id
       - title: project
         url: /project
       - title: linkedin
         url: https://www.linkedin.com/in/fleetime/
-      - title: github 💻
+      - title: github 
         url: https://github.com/fleetimee/
-      - title: twitter 🐦
+      - title: twitter 
         url: https://twitter.com/fleetimee
 
   - title: my blog ?(sort of).
