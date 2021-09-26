@@ -4,7 +4,7 @@ title: Project
 ---
 
 ## Index <!-- omit in toc -->
-- [Siskubis](#Siskubis)
+- [Siskubis](#siskubis)
 - [Allbike](#allbike)
 - [SpursApp](#spursapp)
 - [AMIKOM Redesign](#amikomredesign)
@@ -22,4 +22,4 @@ I was responsible for creating the Landing Page interface and The Dashboard page
 
   
 
-**Live Demo**  : [https://siskubis.my.id/](https://siskubis.my.id/)  _(login as Inkubator to view Dashboard |  **inkubator@inkubator.com:inkubator**)_
+**Live Demo**  : [https://siskubis.my.id/](https://siskubis.my.id/)  _(login as Inkubator to view Dashboard  **inkubator@inkubator.com:inkubator**)_
