@@ -20,6 +20,8 @@ Siskubis was built using Laravel as server side and using Blade Templating for t
 
 I was responsible for creating the Landing Page interface and The Dashboard page.
 
-  
 
-**Live Demo**  : [https://siskubis.my.id/](https://siskubis.my.id/)  _(login as Inkubator to view Dashboard  **inkubator@inkubator.com:inkubator**)_
+[ [***Live Demo***](https://siskubis.my.id/) ] 
+
+
+## Allbike
