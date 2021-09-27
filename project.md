@@ -9,7 +9,7 @@ title: Project
 - [SpursApp](#spursapp)
 
 ## Siskubis
-![Frontage SISKUBIS](https://i.postimg.cc/yY6P2q9h/Siskubis.png)
+[![Siskubis](https://files.catbox.moe/bnkxyo.webp)](https://files.catbox.moe/bnkxyo.webp)
 
 Siskubis is an information system that can manage data at the Yogyakarta State University incubator.
 
@@ -24,7 +24,7 @@ I was responsible for creating the Landing Page interface and The Dashboard page
 
 
 ## Allbike
-![Frontage Alllbike](https://i.postimg.cc/fWS5CmGc/Allbike.png)
+[![Allbike](https://files.catbox.moe/dn5m6s.webp)](https://files.catbox.moe/dn5m6s.webp)
 
 This project was my stepping stone for learning Laravel and made for learning and tinkering with my Laravel skill.
 
@@ -38,7 +38,7 @@ Built using Laravel as Backend, MySQL as DBMS and deployed to Heroku.
 
 ## SpursApp
 
-[![Siskubis.png](https://i.postimg.cc/R0nQdz8M/Siskubis.png)](https://postimg.cc/mcBHZKBq)
+[![SpursApp](https://files.catbox.moe/2zrtn3.webp)](https://files.catbox.moe/2zrtn3.webp)
 
 This project was built for Final Project in semester 5 a while ago. 
 
