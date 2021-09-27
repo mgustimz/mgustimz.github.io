@@ -7,7 +7,6 @@ title: Project
 - [Siskubis](#siskubis)
 - [Allbike](#allbike)
 - [SpursApp](#spursapp)
-- [AMIKOM Redesign](#amikomredesign)
 
 ## Siskubis
 ![Frontage SISKUBIS](https://i.postimg.cc/yY6P2q9h/Siskubis.png)
@@ -35,3 +34,19 @@ Built using Laravel as Backend, MySQL as DBMS and deployed to Heroku.
 
 [ [***Live Demo***](http://limitless-shelf-44891.herokuapp.com/) ] 
 [ [***Github***](https://github.com/fleetimee/allbike-cms) ] 
+
+
+## SpursApp
+
+[![Siskubis.png](https://i.postimg.cc/R0nQdz8M/Siskubis.png)](https://postimg.cc/mcBHZKBq)
+
+This project was built for Final Project in semester 5 a while ago. 
+
+I tried making a Hybrid Web using Ionic and Angular2 so it can scale to different viewports.
+
+Spurs App is a simple app which can view the next match, latest match, viewing rivals, and saving favourite matches.
+
+It was built using Ionic Framework and Angular also with a help from SportsDB API for data.
+
+[ [***Live Demo***](https://spurs.fleetime.my.id/) ] 
+[ [***Github***](https://github.com/fleetimee/tottenham-app-ionic) ] 
