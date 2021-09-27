@@ -25,3 +25,13 @@ I was responsible for creating the Landing Page interface and The Dashboard page
 
 
 ## Allbike
+![Frontage Alllbike](https://i.postimg.cc/fWS5CmGc/Allbike.png)
+
+This project was my stepping stone for learning Laravel and made for learning and tinkering with my Laravel skill.
+
+All Bike is a fully functional blog which can Create Post, Edit Post, View Post, adding Tag and Categories and Delete Post. I also added Disqus' comment.
+
+Built using Laravel as Backend, MySQL as DBMS and deployed to Heroku.
+
+[ [***Live Demo***](http://limitless-shelf-44891.herokuapp.com/) ] 
+[ [***Github***](https://github.com/fleetimee/allbike-cms) ] 
