@@ -1,16 +1,16 @@
 ---
 layout: post
-title: What is the best website design ?
-slug: best-web-design
+title: Why i stopped pirating
+slug: stop-piracy
 ---
 
-Imo it's a statically generated website with a tiny bit of CSS and Let's Encrypt SSL hosted on a lightweight web server like Ngix. Images should be optimized (see packages like pngquant or jpegoptim) and the right format should be used. Vector images are preferable.
+I used to pirate because i was poor and selfish, but now I generally only pirate:
 
-RSS should be supported. Everything should be hosted on the same server so the user doesn't have to do more than one DNS lookup or connect to multiple servers.
+- Games I have already paid for once. For example, I bought age of empires when it first came out, so im not shelling out $25 again.
+- Games that are no longer, or regionally not available (Looking at you, Metal Gear Rising: Revengeance)
+- Old console games that i want to emulate (which i generally already have bought anyways)
+- Games i want to demo. I usually buy it halfway through if i really enjoy it.
 
-Your videos should be optimized and offered in multiple formats using royalty free codecs free of DRM. Same with audio. There should be no third party scripts or trackers.
+I understand that many companies might see piracy as an issue because less sales=less money, but given that attention is worth more than an actual product nowadays, i think a lot of small/medium companies could -really- benefit from having a more relaxed approach to piracy, or even just go back to distributing demos
 
-Even if your website relies on JavaScript for advanced features, it should still be viewable without JavaScript and in text based web browsers like w3m or Lynx.
-
-"Good design is as little design as possible."
-- some German motherfucker
+Valve was right about piracy being a service problem. Buying something on steam is way easier than torrenting games and downloading cracks while avoiding all the viruses, malwares and trojans.
