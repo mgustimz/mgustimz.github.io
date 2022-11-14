@@ -18,7 +18,19 @@ Dalam beberapa case kalian pasti ingin mendeploy aplikasi flutter ke web untuk d
 
 ## Langkah
 
-- Buka code aplikasi yang mau di deploy kemudian masuk ke bagian 
+- Buka code aplikasi yang mau di deploy kemudian masuk ke bagian `web/index.html`
+![image](https://user-images.githubusercontent.com/45744788/201647348-d56d843e-7f33-4e7c-9f3a-27de33a8eccb.png)
+
+- Tambahkan kode ini pada bagian bawah script (sehabis serviceWorkerVersion)
+```
+<script type="text/javascript">
+    window.flutterWebRenderer = "html";
+</script>
+```
+![image](https://user-images.githubusercontent.com/45744788/201647740-29761dcd-0331-47a5-b6f0-7ba3efaea949.png)
+
+
+
 - Push aplikasi flutter web ke Github. untuk contoh ini saya akan push aplikasi flutter web yang sudah saya buat sebelumnya [[image](![image](https://user-images.githubusercontent.com/45744788/201641608-ebe6fbd8-9df3-40da-8668-ecb7ddaf3ec2.png))]
 
 > Pasti tau lah ya cara push ke Github, kalau belum bisa baca di [sini](https://techobservatory.com/how-to-push-code-from-visual-studio-code-to-github/). 
@@ -57,7 +69,20 @@ build/web
 
 - Kemudian klik tombol `Deploy Site` untuk memulai proses deploy.
 
+![image](https://user-images.githubusercontent.com/45744788/201647939-b1dda70d-981f-4adf-ac36-d7075695cb86.png)
+
 - Jika proses deploy sudah selesai, maka akan muncul link untuk mengakses aplikasi flutter web yang sudah kita deploy.
+
+![image](https://user-images.githubusercontent.com/45744788/201648021-2a152874-1b15-48af-ab81-70b1d3b02782.png)
+
+- (Opsional) Jika ingin mempercantik nama domain, pergi ke `Site Overview` -> `Site Setting` -> Site Details -> `Change site name` -> Masukkan nama domain yang diinginkan -> `Save`
+
+![image](https://user-images.githubusercontent.com/45744788/201648347-53d9d5a8-a00e-44b7-bf53-f63cad6aeb07.png)
+
+
+Selesai 🎉🎉🎉
+
+Untuk melihat aplikasi yang di deploy pada tutorial ini bisa kunjungi [sini](hhttps://fugi-spesial.netlify.app/)
 
 
 
