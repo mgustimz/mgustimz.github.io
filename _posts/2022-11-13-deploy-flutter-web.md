@@ -21,6 +21,7 @@ Dalam beberapa case kalian pasti ingin mendeploy aplikasi flutter ke web untuk d
 - Buka code aplikasi yang mau di deploy kemudian masuk ke bagian `web/index.html`
 ![image](https://user-images.githubusercontent.com/45744788/201647348-d56d843e-7f33-4e7c-9f3a-27de33a8eccb.png)
 
+
 - Tambahkan kode ini pada bagian bawah script (sehabis serviceWorkerVersion)
 ```
 <script type="text/javascript">
@@ -28,6 +29,15 @@ Dalam beberapa case kalian pasti ingin mendeploy aplikasi flutter ke web untuk d
 </script>
 ```
 ![image](https://user-images.githubusercontent.com/45744788/201647740-29761dcd-0331-47a5-b6f0-7ba3efaea949.png)
+
+- Tambahkan juga `INTERNET PERMISSION` pada `AndroidManifest.xml` dan `Info.plist` (jika ada)
+
+```
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+![image](https://user-images.githubusercontent.com/45744788/201659635-27718925-29c6-4ea9-88e0-d616716ba51b.png)
+
 
 
 
