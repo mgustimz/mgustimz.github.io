@@ -40,3 +40,25 @@ File workflow ini akan berisi konfigurasi untuk melakukan build dan deploy aplik
 ![image](https://user-images.githubusercontent.com/45744788/202039396-affe7c3f-e87b-44cc-873c-bd423744c16b.png)
 
 
+### Menjalankan workflow
+
+untuk menjalankan workflow, kita bisa melakukan push tag ke Github sesuai dengan konfigurasi yang sudah dibuat tadi.
+
+Karena kita sudah membuat konfigurasi untuk melakukan build dan deploy ketika ada tag baru, maka kita bisa melakukan push tag ke Github.
+
+- Buka terminal, lalu masuk ke folder project Flutter
+- (Opsional) Jika ada file yang berubah lakukan commit terlebih dahulu
+- Jalankan perintah `git tag v1.0.0` untuk membuat tag baru dengan nama `v1.0.0` lalu tekan enter
+- Jalankan perintah `git push origin v1.0.0` untuk push tag ke Github lalu tekan enter
+![image](https://user-images.githubusercontent.com/45744788/202040182-ed9303ea-97d1-4e1b-84d5-132a8323f627.png)
+- Cek tab `Actions` di Github, maka workflow akan berjalan
+![image](https://user-images.githubusercontent.com/45744788/202040291-4c48f976-b2ad-439c-ab32-fbd2542ccffc.png)
+- Tunggu sampai workflow selesai berjalan (Kurang lebih 5-7 menit)
+![image](https://user-images.githubusercontent.com/45744788/202040433-4e1afdf8-10c9-49ee-9f6e-55062c1f3a4d.png)
+- Jika sudah selesai, cek tab `Releases` di Github, maka akan muncul release yang sudah dibuat tadi
+![image](https://user-images.githubusercontent.com/45744788/202040879-47158fe3-3191-43ff-8b25-ec5da9b5520b.png)
+
+
+## Langkah (Integrasi ke Play Console) (Opsional)
+
+Soon 🎉
