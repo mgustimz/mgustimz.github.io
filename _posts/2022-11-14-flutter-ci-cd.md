@@ -16,7 +16,7 @@ Dalam guide ini akan dibahas bagaimana cara melakukan CI/CD pada aplikasi Flutte
 
 ## Persiapan
 - Punya akun Github dan mengerti dasar-dasarnya (Push, Pull, Fork, PR, dll)
-- Project Flutter yang sudah jalan di lokal
+- Project Flutter yang sudah jalan di lokal (Aktifkan `INTERNET PERMISSION` di `AndroidManifest.xml`)
 - (Opsional) Akun Play Console untuk melakukan deploy secara otomatis ke Play Store
 
 ## Langkah (Build & Deploy)
@@ -32,5 +32,11 @@ File workflow ini akan berisi konfigurasi untuk melakukan build dan deploy aplik
 
 - Isi file workflow dengan konfigurasi berikut
 {% gist 9947b4050fe011582d749855cbd97fc6 %}
+
+- Kemudian commit dan push ke Github
+![image](https://user-images.githubusercontent.com/45744788/202039290-44b8e22a-baec-44d9-ae6c-e58fbf70f302.png)
+
+- Jika sudah cek tab `Actions` di Github, maka akan muncul workflow yang sudah dibuat tadi, tetapi belum berjalan.
+![image](https://user-images.githubusercontent.com/45744788/202039396-affe7c3f-e87b-44cc-873c-bd423744c16b.png)
 
 
