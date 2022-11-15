@@ -29,3 +29,5 @@ File workflow ini akan berisi konfigurasi untuk melakukan build dan deploy aplik
 
 - Buat file workflow dengan nama `flutter.yml` di folder `.github/workflows` ( kalau belum ada folder `.github/workflows` silahkan buat dulu )
 ![image](https://user-images.githubusercontent.com/45744788/202035956-5adda872-9c41-4559-91c0-6941625264eb.png)
+
+{% gist 2ab15baf96e59f73bcad781c993d232b %}
