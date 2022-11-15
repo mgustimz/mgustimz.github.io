@@ -4,7 +4,6 @@ title: Otomatisasi workflow Flutter dengan CI/CD menggunakan Github Actions 🚀
 slug: flutter-ci-cd
 ---
 
-> Alternatif selain Github Actions adalah menggunakan Gitlab CI/CD. Namun, Codemagic juga menyediakan layanan CI/CD gratis untuk Flutter. Namun, saya lebih suka menggunakan Github Actions karena lebih mudah dan lebih fleksibel dan juga sudah bawaan github jadi tidak perlu ke website lain 🤣🤣.
 
 ## Intro
 
