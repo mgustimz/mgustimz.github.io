@@ -31,6 +31,6 @@ File workflow ini akan berisi konfigurasi untuk melakukan build dan deploy aplik
 ![image](https://user-images.githubusercontent.com/45744788/202035956-5adda872-9c41-4559-91c0-6941625264eb.png)
 
 - Isi file workflow dengan konfigurasi berikut
-{% gist 2ab15baf96e59f73bcad781c993d232b %}
+{% gist 9947b4050fe011582d749855cbd97fc6 %}
 
 
