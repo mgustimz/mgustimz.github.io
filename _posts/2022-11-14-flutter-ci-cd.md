@@ -20,8 +20,6 @@ Dalam guide ini akan dibahas bagaimana cara melakukan CI/CD pada aplikasi Flutte
 
 ## Langkah (Build & Deploy)
 
-
-
 ### Buat file workflow
 
 File workflow ini akan berisi konfigurasi untuk melakukan build dan deploy aplikasi Flutter. File workflow ini akan berada di folder `.github/workflows` dengan nama `flutter.yml`. 
@@ -116,6 +114,11 @@ Untuk caranya agak sedikit mirip untuk yang di github tapi ada beberapa hal yang
 {% gist 6a56500ffc684e8c3c12500f180afdea %}
 
 Kode diatas diambil dari [flutter.dev](https://docs.flutter.dev/deployment/android)
+
+
+### Signin app dan build appbundle
+
+> Pada contoh `Langkah (Build & Deploy)` appbundles dan apk tersebut tidak dibekali dengan keystore, nah salah satu persyaratan untuk bisa upload di Play Console adalah appbundle dan apk tersebut harus dibekali dengan keystore. Jadi mari kita buat keystore dulu lalu kita sign appbundle dan apk tersebut.
 
 ### Edit file workfiles
 
