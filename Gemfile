@@ -3,8 +3,9 @@
 source "https://rubygems.org"
 
 gem "kramdown-parser-gfm"
+gem 'jekyll-toc'
+gem 'jekyll-gist'
 
 gemspec
 
-gem 'jekyll-gist'
-gem 'jekyll-toc'
+
