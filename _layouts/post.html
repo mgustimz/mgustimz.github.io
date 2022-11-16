@@ -11,7 +11,14 @@ layout: default
   
   <h1>{{ page.title }}</h1>
 
-  {{ content | toc}}
+    <div>
+    <div id="table-of-contents">
+      {% toc %}
+    </div>
+    <div id="markdown-content">
+      {{ content }}
+    </div>
+</div>
 </article>
 
 <div class="col-lg-8 col-md-10 mx-auto">
