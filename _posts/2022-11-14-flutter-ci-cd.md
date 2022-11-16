@@ -273,3 +273,7 @@ Tambahkan 2 line ini / uncomment line ini dari file yang sebelumnya sudah dibuat
 ```
 
 > Fungsi diatas digunakan untuk mendecode file `keystore.jks` dan `key.properties` yang sudah di encode sebelumnya. Nah karena kode keystore.js dan key.properties itu sangat sensitif saya sarankan jangan dimasukkan ke version control (Github) karena bisa diakses oleh siapa saja. Jadi saya encode dulu file tersebut lalu masukkan ke Github Secrets dengan metode file ke base64 (karena github secret hanya menerima text).
+
+Hasil jadinya akan seperti ini (copas aja, sudah self explanatory dan sudah kukasih komen)
+
+{% gist fde01d848eb4c8f0a950017f02295614 %}
