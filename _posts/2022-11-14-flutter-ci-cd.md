@@ -188,6 +188,9 @@ flutter build appbundle
 
 Tunggu beberapa saat, jika sudah selesai maka akan muncul file `app-release.aab` di folder `build/app/outputs/bundle/release`
 
+Ini adalah app yang sudah di sign dengan keystore yang kita buat tadi
+
+![image](https://user-images.githubusercontent.com/45744788/202103957-2d60d7a7-9c15-4345-af65-efa43aa2a081.png)
 
 
 ### Edit file workfiles
