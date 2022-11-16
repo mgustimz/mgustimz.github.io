@@ -359,6 +359,7 @@ Bisa dibaca lebih lanjut disini
 
 ### Pre-launch check
 
+- Jangan lupa tambahkan version code +1 (kalau udah ada 1 ya pake 2 dst) di pubspec.yaml
 - Jangan lupa beri permission penuh pada app yang mau di publish lewat Play Console
 ![image](https://user-images.githubusercontent.com/45744788/202180579-7570ef73-95fd-4da4-b4f9-f1542ecf14f8.png)
 - Ceklis semua permission pada Account Permissions
@@ -366,3 +367,16 @@ Bisa dibaca lebih lanjut disini
 
 
 ### Menjalankan Workflow
+- Untuk mentrigger workflow buat tag baru dengan format `1.0.0` (sesuaikan dengan versi app yang mau di publish)
+- Jalankan perintah `git tag 1.0.0` untuk membuat tag baru dengan nama `v1.0.0` lalu tekan enter
+- Jalankan perintah `git push origin 1.0.0` untuk push tag ke Github lalu tekan enter
+
+### Finishing
+- Tunggu beberapa saat sampai workflow selesai
+- Jika sukses maka akan ada notice seperti ini pada tab `Action`
+![image](https://user-images.githubusercontent.com/45744788/202181808-673db166-f2cf-4200-9196-6c85ae5b37c5.png)
+- Check juga pada Play Console, apakah sudah ada versi baru yang terpublish
+
+
+Selamat telah berhasil membuat workflow untuk publish app ke Play Store secara otomatis. Mulai sekarang jika ada perubahan baru di app kita tinggal push tag ke Github dan workflow akan otomatis berjalan untuk publish app ke Play Store. Yay 🎉🎉🎉
+
