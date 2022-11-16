@@ -249,6 +249,12 @@ $ java -jar pepk.jar --keystore=furniture.jks --alias=upload --output=output.zip
 
 - Langkah terakhir upload aab yang digenerate dengan key ini untuk mendapatkan app id
 ![image](https://user-images.githubusercontent.com/45744788/202119672-3eb45ce1-8e93-4734-a0da-834e67634920.png) 
+![image](https://user-images.githubusercontent.com/45744788/202125875-ce868cfa-0f54-4e0d-95ef-443b60ffc011.png)
+![image](https://user-images.githubusercontent.com/45744788/202126942-71d7a86a-1eda-450c-8fa7-4bb1635e6fe0.png)
+
+> App ID yang didapat adalah com.nighthawk.heh
+
+Dengan ini sudah siap untuk pindah ke Github Action
 
 
 
