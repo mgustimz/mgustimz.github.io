@@ -277,3 +277,18 @@ Tambahkan 2 line ini / uncomment line ini dari file yang sebelumnya sudah dibuat
 Hasil jadinya akan seperti ini (copas aja, sudah self explanatory dan sudah kukasih komen)
 
 {% gist fde01d848eb4c8f0a950017f02295614 %}
+
+
+### Sshh, its our Secret
+
+Notice pada gist diatas ada value seperti `KEYSTORE_JKS_PROD` dan `KEY_PROPERTIES_PROD`, dan `GOOGLE_SERVICE_JSONKEY` itu adalah nama yang kita buat di Github Secrets. Jadi kita perlu membuat 3 secrets dengan nama tersebut.
+
+> Kenapa gak langsung di push saja ke Github ? dont please dont. Karena file `keystore.jks`, `key.properties`, dan `services.json` itu sangat sensitif, jadi jangan sampai ada orang yang bisa mengakses file tersebut. Jadi kita encode dulu file tersebut lalu masukkan ke Github Secrets dengan metode file ke base64 (karena github secret hanya menerima text).
+
+#### KEYSTORE_JKS_PROD
+- Buka website https://base64.guru/converter/encode/file
+- Buka file lokasi file `keystore.jks` (disini saya pakai `furniture.jks`) yang sudah kita buat tadi
+- Upload file ke dalam kolom upload
+- Lalu klik tombol `Encode file to base64`
+![image](https://user-images.githubusercontent.com/45744788/202133848-2e49c036-4812-4baa-9b33-baa684b0c5f8.png)
+- Copy hasilnya
