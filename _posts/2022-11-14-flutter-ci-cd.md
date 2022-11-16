@@ -156,9 +156,24 @@ keytool -genkey -v -keystore D:/furniture.jks -storetype JKS -keyalg RSA -keysiz
 
 > Untuk tutorial ini saya simpan di root drive D untuk memudahkan saja
 
-One down one to go. File `keystore` sudah diamankan sekarang tinggal buat file `key.properties`
+One down one to go. File `keystore.jks` sudah diamankan sekarang tinggal buat file `key.properties`
 
+- Pergi ke root folder aplikasi flutter kalian lalu buka folder `android`
+- Buat file dengan nama `key.properties`
+![image](https://user-images.githubusercontent.com/45744788/202100989-a14e49c0-a8aa-4e38-99c9-2e30cdb31b74.png)
 
+- Buka file tersebut dengan text editor, lalu isi dengan string ini
+```
+storePassword=123456 
+keyPassword=654321
+keyAlias=upload
+storeFile=D:/furniture.jks
+```
+> `storePassword` dan `keyPassword` adalah password yang kalian catat tadi, `storePassword` adalah password keystore dan `keyPassword` adalah password alias
+
+> `keyAlias` merupakan alias yang kita set tadi
+
+> `storeFile` adalah path `keystore.jks` yang kita buat tadi karena tadi saya buat di root drive D maka saya arahkan kesana
 
 
 ### Edit file workfiles
