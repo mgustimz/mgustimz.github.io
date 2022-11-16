@@ -22,6 +22,16 @@ window.addEventListener("load", () => {
         document.body.setAttribute("data-theme", theme);
     }
 });
+// auto change theme based data-theme attribute
+function autoChangeMode() {
+    // detect body data-theme attribute
+    let theme = document.body.getAttribute("data-theme");
+    // on first load, check if user has a preference in cookie
+    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (theme === null) {
+        theme = isDark ? "dark" : "light";
+    }
+}
 
 // get cookie by name
 function getCookie(name) {
@@ -32,4 +42,9 @@ function getCookie(name) {
     }
 }
 // make it priority to load before other scripts
-document.addEventListener("DOMContentLoaded", changeMode);
+document.addEventListener("DOMContentLoaded", function () {
+    // add event listener to mode button
+    document.getElementById("mode").addEventListener("click", changeMode);
+    // add event listener to auto change mode
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", autoChangeMode);
+});
