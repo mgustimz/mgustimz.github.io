@@ -21,12 +21,12 @@ theme_config:
 sass:
   style: :compressed
 
-
 plugins:
+  - jekyll-toc
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-gist
-  - jekyll-toc
+
 
 # TOC Settings
 toc:
