@@ -277,7 +277,13 @@ Tambahkan 2 line ini / uncomment line ini dari file yang sebelumnya sudah dibuat
 
 Hasil jadinya akan seperti ini (copas aja, sudah self explanatory dan sudah kukasih komen)
 
+<details>
+	<summary>Click to expand</summary>
+	
 {% gist fde01d848eb4c8f0a950017f02295614 %}
+</details>
+
+
 
 
 ### Sshh, its our Secret
@@ -293,3 +299,4 @@ Notice pada gist diatas ada value seperti `KEYSTORE_JKS_PROD` dan `KEY_PROPERTIE
 - Lalu klik tombol `Encode file to base64`
 ![image](https://user-images.githubusercontent.com/45744788/202133848-2e49c036-4812-4baa-9b33-baa684b0c5f8.png)
 - Copy hasilnya
+
