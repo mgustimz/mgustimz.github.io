@@ -134,10 +134,23 @@ keytool -genkey -v -keystore D:/furniture.jks -storetype JKS -keyalg RSA -keysiz
 
 > Path `D:/` berarti kita membuat keystore di `root drive D`, jika kalian ingin membuatnya di drive atau folder lainnya silahkan ganti sesuai dengan drive kalian
 
-- Akan muncul beberapa prompt yang gak penting silahkan isi sesuai keinginan kalian, jika ditanya password yang pertama catat ya, karena nanti kita akan membutuhkannya
+- Akan muncul beberapa prompt yang gak penting silahkan isi sesuai keinginan kalian, jika ditanya password yang pertama (`keystore`) catat ya, karena nanti kita akan membutuhkannya
 - Kemudian ketikkan 'yes' di akhir prompt
 ![image](https://user-images.githubusercontent.com/45744788/202095905-46a12f38-d5fe-47dd-a710-7a5aa6134500.png)
 > Untuk password keystore saya: 123456 (Minimal 6 karakter)
+
+- Lalu ditanyakan untuk password keduanya (`alias`) masukkan password (jangan langsung enter), jangan lupa dicatat juga password yang ini
+![image](https://user-images.githubusercontent.com/45744788/202097063-f7cd75fd-83c6-49c1-8760-58e30569d033.png)
+
+> Untuk password alias saya: 654321 (Minimal 6 karakter dan harus berbeda dgn password keystore)
+
+- Kalau sudah berhasil akan seperti ini dan file dapat ditemukan di drive D
+![image](https://user-images.githubusercontent.com/45744788/202098015-b64eb952-0baf-4d0c-8424-a7ab5702ec7c.png)
+![image](https://user-images.githubusercontent.com/45744788/202098219-4ab97601-319c-4e14-88cf-a5b1837471f5.png)
+
+- Simpan file keystore tersebut di folder yang aman, karena nanti kita akan membutuhkannya untuk upload ke Play Console dan Integrasi dengan Github Action
+
+> Untuk tutorial ini saya simpan di root drive D untuk memudahkan saja
 
 
 ### Edit file workfiles
