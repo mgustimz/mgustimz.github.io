@@ -18,7 +18,7 @@ Dalam guide ini akan dibahas bagaimana cara melakukan CI/CD pada aplikasi Flutte
 - Project Flutter yang sudah jalan di lokal (Aktifkan `INTERNET PERMISSION` di `AndroidManifest.xml`)
 - (Opsional) Akun Play Console untuk melakukan deploy secara otomatis ke Play Store
 
-## Langkah (Build & Deploy)
+## Langkah (Build & Deploy Only)
 
 ### Buat file workflow
 
@@ -58,7 +58,7 @@ Karena kita sudah membuat konfigurasi untuk melakukan build dan deploy ketika ad
 
 Untuk CI/CD sampai Github saja selesai disini ya 🎉
 
-## Langkah (Integrasi ke Play Console) (Opsional)
+## Langkah (Build, Deploy, dan Integrasi Play Console) (Opsional)
 
 > Jika tidak punya akun Play Console, silahkan buat dulu ya harganya $25
 
@@ -124,7 +124,7 @@ Disini kita akan membuat 2 file yaitu `keystore.jks` dan `key.properties`, fungs
 
 Kedua file ini tidak akan di push ke Github, karena juga sudah `.gitignore` secara default
 
-> Pada contoh `Langkah (Build & Deploy)` appbundles dan apk tersebut tidak dibekali dengan keystore, nah salah satu persyaratan untuk bisa upload di Play Console adalah appbundle dan apk tersebut harus dibekali dengan keystore. Jadi mari kita buat keystore dulu lalu kita sign appbundle dan apk tersebut.
+> Pada contoh `Langkah (Build & Deploy Only)` appbundles dan apk tersebut tidak dibekali dengan keystore, nah salah satu persyaratan untuk bisa upload di Play Console adalah appbundle dan apk tersebut harus dibekali dengan keystore. Jadi mari kita buat keystore dulu lalu kita sign appbundle dan apk tersebut.
 
 - Buka terminal, lalu masuk ke folder project Flutter
 - Jalankan perintah 
@@ -191,6 +191,20 @@ Tunggu beberapa saat, jika sudah selesai maka akan muncul file `app-release.aab`
 Ini adalah app yang sudah di sign dengan keystore yang kita buat tadi
 
 ![image](https://user-images.githubusercontent.com/45744788/202103957-2d60d7a7-9c15-4345-af65-efa43aa2a081.png)
+
+
+### To the PlayConsole, we go !
+
+> Pastikan sudah buat akun Play Console dulu ya
+
+> Tujuan section ini adalah untuk mendapatkan appid yang akan kita gunakan untuk integrasi dengan Github Action, serta Mensetup keystore yang kita generate tadi dengan PlayConsole.
+
+Flow nya kira kira seperti ini
+- [ ]  Upload Manual 1x untuk mendapatkan app id 
+- [ ]  Setup keystore yang kita buat tadi agar SHA nya sama ketika di deploy lewat Github Action
+- [ ] Setelah itu bisa deploy lewat Github Action sepuasnya
+
+Login ke PlayConsole lalu buat aplikasi baru
 
 
 ### Edit file workfiles
