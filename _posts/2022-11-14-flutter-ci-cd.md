@@ -120,6 +120,18 @@ Kode diatas diambil dari [flutter.dev](https://docs.flutter.dev/deployment/andro
 
 > Pada contoh `Langkah (Build & Deploy)` appbundles dan apk tersebut tidak dibekali dengan keystore, nah salah satu persyaratan untuk bisa upload di Play Console adalah appbundle dan apk tersebut harus dibekali dengan keystore. Jadi mari kita buat keystore dulu lalu kita sign appbundle dan apk tersebut.
 
+- Buka terminal, lalu masuk ke folder project Flutter
+- Jalankan perintah 
+
+```
+keytool -genkey -v -keystore D:/furniture.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+```
+- lalu tekan enter
+
+> Keystore `furniture.jks` bisa diganti dengan nama apapun yang kalian inginkan begitu juga dengan alias `upload`
+
+> Path D:/ berarti kita membuat keystore di root drive D, jika kalian ingin membuatnya di drive lainnya silahkan ganti sesuai dengan drive kalian
+
 ### Edit file workfiles
 
 Karena file workflow yang sudah dibuat tadi hanya untuk build dan deploy ke Github, maka kita perlu mengedit file workflow tersebut untuk melakukan integrasi ke Play Console.
