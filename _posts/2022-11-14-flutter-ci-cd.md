@@ -18,7 +18,7 @@ Dalam guide ini akan dibahas bagaimana cara melakukan CI/CD pada aplikasi Flutte
 - Project Flutter yang sudah jalan di lokal (Aktifkan `INTERNET PERMISSION` di `AndroidManifest.xml`)
 - (Opsional) Akun Play Console untuk melakukan deploy secara otomatis ke Play Store
 
-## Langkah (Build & Deploy)
+## Langkah (Build & Deploy Only)
 
 ### Buat file workflow
 
@@ -58,11 +58,13 @@ Karena kita sudah membuat konfigurasi untuk melakukan build dan deploy ketika ad
 
 Untuk CI/CD sampai Github saja selesai disini ya 🎉
 
-## Langkah (Integrasi ke Play Console) (Opsional)
+## Langkah (Build, Deploy, dan Integrasi Play Console) (Opsional)
 
 > Jika tidak punya akun Play Console, silahkan buat dulu ya harganya $25
 
 > Guide yang ini mungkin lebih advanced dari yang atas jadi bear in mind ya 😅
+
+> Guide ini hanya untuk Windows, untuk MacOS dan Linux silahkan cari sendiri ya tapi harusnya sih mirip mirip. atau kalau mau berkontribusi kalau tau caranya untuk Linux dan MacOS silahkan PR ke repo ini ya
 
 Untuk caranya agak sedikit mirip untuk yang di github tapi ada beberapa hal yang berbeda jika sudah masuk Play Console.
 
@@ -118,7 +120,142 @@ Kode diatas diambil dari [flutter.dev](https://docs.flutter.dev/deployment/andro
 
 ### Signin app dan build appbundle
 
-> Pada contoh `Langkah (Build & Deploy)` appbundles dan apk tersebut tidak dibekali dengan keystore, nah salah satu persyaratan untuk bisa upload di Play Console adalah appbundle dan apk tersebut harus dibekali dengan keystore. Jadi mari kita buat keystore dulu lalu kita sign appbundle dan apk tersebut.
+Disini kita akan membuat 2 file yaitu `keystore.jks` dan `key.properties`, fungsi keystore untuk menandatangani aplikasi kita, sedangkan key.properties untuk menyimpan informasi dari keystore dan mennyambukan dengan app flutter kita.
+
+Kedua file ini tidak akan di push ke Github, karena juga sudah `.gitignore` secara default
+
+> Pada contoh `Langkah (Build & Deploy Only)` appbundles dan apk tersebut tidak dibekali dengan keystore, nah salah satu persyaratan untuk bisa upload di Play Console adalah appbundle dan apk tersebut harus dibekali dengan keystore. Jadi mari kita buat keystore dulu lalu kita sign appbundle dan apk tersebut.
+
+- Buka terminal, lalu masuk ke folder project Flutter
+- Jalankan perintah 
+
+```
+keytool -genkey -v -keystore D:/furniture.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+```
+- lalu tekan enter
+
+> Keystore `furniture.jks` bisa diganti dengan nama apapun yang kalian inginkan begitu juga dengan alias `upload`
+
+> Path `D:/` berarti kita membuat keystore di `root drive D`, jika kalian ingin membuatnya di drive atau folder lainnya silahkan ganti sesuai dengan drive kalian
+
+- Akan muncul beberapa prompt yang gak penting silahkan isi sesuai keinginan kalian, jika ditanya password yang pertama (`keystore`) catat ya, karena nanti kita akan membutuhkannya
+- Kemudian ketikkan 'yes' di akhir prompt
+![image](https://user-images.githubusercontent.com/45744788/202095905-46a12f38-d5fe-47dd-a710-7a5aa6134500.png)
+> Untuk password keystore saya: 123456 (Minimal 6 karakter)
+
+- Lalu ditanyakan untuk password keduanya (`alias`) masukkan password (jangan langsung enter), jangan lupa dicatat juga password yang ini
+![image](https://user-images.githubusercontent.com/45744788/202097063-f7cd75fd-83c6-49c1-8760-58e30569d033.png)
+
+> Untuk password alias saya: 654321 (Minimal 6 karakter dan harus berbeda dgn password keystore)
+
+- Kalau sudah berhasil akan seperti ini dan file dapat ditemukan di drive D
+![image](https://user-images.githubusercontent.com/45744788/202098015-b64eb952-0baf-4d0c-8424-a7ab5702ec7c.png)
+![image](https://user-images.githubusercontent.com/45744788/202098219-4ab97601-319c-4e14-88cf-a5b1837471f5.png)
+
+- Simpan file keystore tersebut di folder yang aman, karena nanti kita akan membutuhkannya untuk upload ke Play Console dan Integrasi dengan Github Action
+
+> Untuk tutorial ini saya simpan di root drive D untuk memudahkan saja
+
+One down one to go. File `keystore.jks` sudah diamankan sekarang tinggal buat file `key.properties`
+
+- Pergi ke root folder aplikasi flutter kalian lalu buka folder `android`
+- Buat file dengan nama `key.properties`
+![image](https://user-images.githubusercontent.com/45744788/202100989-a14e49c0-a8aa-4e38-99c9-2e30cdb31b74.png)
+
+- Buka file tersebut dengan text editor, lalu isi dengan string ini
+```
+storePassword=123456 
+keyPassword=654321
+keyAlias=upload
+storeFile=D:/furniture.jks
+```
+
+> `storePassword` dan `keyPassword` adalah password yang kalian catat tadi, `storePassword` adalah password keystore dan `keyPassword` adalah password alias
+
+> `keyAlias` merupakan alias yang kita set tadi
+
+> `storeFile` adalah path `keystore.jks` yang kita buat tadi karena tadi saya buat di root drive D maka saya arahkan kesana
+
+![image](https://user-images.githubusercontent.com/45744788/202102501-a09ef511-a7fb-4168-9af8-c7ce775fd0a1.png)
+
+file `keystore.jks` dan `key.properties` sudah siap, sekarang kita akan sign appbundle dan apk
+
+Jika semua sudah selesai, kita bisa sign appbundle dan apk kita dengan menjalankan perintah ini
+
+```
+flutter build appbundle
+```
+
+Tunggu beberapa saat, jika sudah selesai maka akan muncul file `app-release.aab` di folder `build/app/outputs/bundle/release`
+
+Ini adalah app yang sudah di sign dengan keystore yang kita buat tadi
+
+![image](https://user-images.githubusercontent.com/45744788/202103957-2d60d7a7-9c15-4345-af65-efa43aa2a081.png)
+
+
+### To the PlayConsole, we go !
+
+> Pastikan sudah buat akun Play Console dulu ya
+
+> Tujuan section ini adalah untuk mendapatkan appid yang akan kita gunakan untuk integrasi dengan Github Action, serta Mensetup keystore yang kita generate tadi dengan PlayConsole.
+
+> Disini saya menggunakan mode `Internal testing` jika ingin menggunakan mode perilisan lainnya silahkan disesuaikan
+
+Flow nya kira kira seperti ini
+- [x]  Upload Manual 1x untuk mendapatkan app id 
+- [x]  Setup keystore yang kita buat tadi agar SHA nya sama ketika di deploy lewat Github Action
+- [x] Setelah itu bisa deploy lewat Github Action sepuasnya
+
+Login ke PlayConsole lalu buat aplikasi baru
+
+- Isikan nama aplikasi, dll lalu `Create`
+- Pilih `Internal testing` pada sidebar `Play Console`
+- Lalu `Create a new release`
+
+![image](https://user-images.githubusercontent.com/45744788/202113275-062d5ef4-3e06-48b0-a9eb-7af7f7fa7f36.png)
+
+- Ganti metode app signin menggunakan keystore yang sudah kita buat tadi agar tidak ter generate otomatis oleh Google
+![image](https://user-images.githubusercontent.com/45744788/202113780-cb85d159-0758-4df1-a8b7-991fa6597d25.png)
+
+- Pilih `Use a different key`
+![image](https://user-images.githubusercontent.com/45744788/202114282-5f9651cd-b1e8-46ff-8efa-4ac29da7f982.png)
+
+- Lalu pilih yang `Export and upload from Java keystore`
+![image](https://user-images.githubusercontent.com/45744788/202114710-e6cf83f0-be25-47f9-9ad7-8bed2a9ca522.png)
+
+- Download `PEPK` tool nya, lalu letakkan di tempat dimana `keystore` tadi disimpan
+![image](https://user-images.githubusercontent.com/45744788/202117397-f0ef0de8-bcc2-4ba4-a2e7-b447fdd1266c.png)
+
+- Buka terminal lalu ketikkan perintah ini
+
+```
+$ java -jar pepk.jar --keystore=furniture.jks --alias=upload --output=output.zip --include-cert --encryptionkey=eb10fe8f7c7c9df715022017b00c6471f8ba8170b13049a11e6c09ffe3056a104a3bbe4ac5a955f4ba4fe93fc8cef27558a3eb9d2a529a2092761fb833b656cd48b9de6a
+```
+
+![image](https://user-images.githubusercontent.com/45744788/202118058-7fd18e8b-c3c4-4b88-adeb-cb29d3903b11.png)
+
+> `keystore` dengan value `furniture,jks` adalah nama key yang kita buat tadi, begitu juga dengan `alias` yang tadi kita namai `upload`
+
+- Pencet enter kemudian akan ditanyai 2 password tadi, masukkan keduanya dengan benar
+
+- Jika sukses maka akan ada file `output.zip`
+![image](https://user-images.githubusercontent.com/45744788/202118718-88ece3b1-342f-452a-a30e-547940910d3c.png)
+
+- Upload file ini ke dalam kolom upload untuk menset key nya
+![image](https://user-images.githubusercontent.com/45744788/202119055-829bc36f-086a-4f92-bf21-ead85f2f41d1.png)
+
+- Maka prompt akan berubah menjadi seperti ini
+![image](https://user-images.githubusercontent.com/45744788/202119180-26021626-e8b9-4f14-8c1d-261d3da14406.png)
+
+- Langkah terakhir upload aab yang digenerate dengan key ini untuk mendapatkan app id
+![image](https://user-images.githubusercontent.com/45744788/202119672-3eb45ce1-8e93-4734-a0da-834e67634920.png) 
+![image](https://user-images.githubusercontent.com/45744788/202125875-ce868cfa-0f54-4e0d-95ef-443b60ffc011.png)
+![image](https://user-images.githubusercontent.com/45744788/202126942-71d7a86a-1eda-450c-8fa7-4bb1635e6fe0.png)
+
+> App ID yang didapat adalah com.nighthawk.heh
+
+Dengan ini sudah siap untuk pindah ke Github Action
+
 
 ### Edit file workfiles
 
