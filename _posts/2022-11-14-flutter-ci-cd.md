@@ -298,6 +298,7 @@ Notice pada gist diatas ada value seperti `KEYSTORE_JKS_PROD` dan `KEY_PROPERTIE
 > Kenapa gak langsung di push saja ke Github ? dont please dont. Karena file `keystore.jks`, `key.properties`, dan `services.json` itu sangat sensitif, jadi jangan sampai ada orang yang bisa mengakses file tersebut. Jadi kita encode dulu file tersebut lalu masukkan ke Github Secrets dengan metode file ke base64 (karena github secret hanya menerima text).
 
 #### Encode KEYSTORE_JKS_PROD ke base64
+
 - Buka website https://base64.guru/converter/encode/file
 - Buka file lokasi file `keystore.jks` (disini saya pakai `furniture.jks`) yang sudah kita buat tadi
 - Upload file ke dalam kolom upload
@@ -306,20 +307,24 @@ Notice pada gist diatas ada value seperti `KEYSTORE_JKS_PROD` dan `KEY_PROPERTIE
 - Copy hasilnya (Letakkan di Notepad atau tempat catatan lain untuk sementara)
 
 #### Encode KEY_PROPERTIES_PROD ke base64
+- Sebelum di encode buka file `key.properties` dan ubah value `storeFile` menjadi `keystore.jks`. Karena hasil decode nama filenya nanti akan diubah secara otomatis menjadi `keystore.jks` dan tidak `furniture.jks`
+![image](https://user-images.githubusercontent.com/45744788/202174165-56aaada4-d4bd-4f64-8ba2-e5a44f025d46.png)
 - Buka website https://base64.guru/converter/encode/file
 - Buka file lokasi file `key.properties` yang sudah kita buat tadi
 - Upload file ke dalam kolom upload
 - Lalu klik tombol `Encode file to base64`
-![image](https://user-images.githubusercontent.com/45744788/202134100-5b9c6f9f-1b8d-4b9b-9b9b-3b2b2b2b2b2b.png)
+![image](https://user-images.githubusercontent.com/45744788/202174801-1ed77e3f-541c-4583-8598-da0877f9d392.png)
 - Copy hasilnya (Letakkan di Notepad atau tempat catatan lain untuk sementara)
 
 
 #### Mendapatkan Google Service Json Key
 
+Bisa dibaca lebih lanjut disini
+
 - https://www.iwantanelephant.com/blog/2020/11/17/how-to-configure-api-access-to-google-play-console/
 - https://developers.google.com/android-publisher/getting_started
 
-Nanti outputnya akan berbentuk json seperti ini
+- Nanti outputnya akan berbentuk json seperti ini
 ```
 {
   "type": "service_account",
@@ -334,3 +339,4 @@ Nanti outputnya akan berbentuk json seperti ini
   "client_x509_cert_url": "xxx"
 }
 ```
+- Copy hasilnya (Letakkan di Notepad atau tempat catatan lain untuk sementara)
