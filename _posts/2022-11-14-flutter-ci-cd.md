@@ -68,6 +68,55 @@ Untuk CI/CD sampai Github saja selesai disini ya 🎉
 
 Untuk caranya agak sedikit mirip untuk yang di github tapi ada beberapa hal yang berbeda jika sudah masuk Play Console.
 
+
+### Persiapkan Aplikasi
+
+- Buka file `app/build.gradle` pada project Flutter kalian
+- Tambahkan line ini di bagian atasnya `android`
+```
+   def keystoreProperties = new Properties()
+   def keystorePropertiesFile = rootProject.file('key.properties')
+   if (keystorePropertiesFile.exists()) {
+       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   }
+
+   android {
+         ...
+   }
+```
+- Kemudian temukan block code `buildTypes`
+```
+ buildTypes {
+       release {
+           // TODO: Add your own signing config for the release build.
+           // Signing with the debug keys for now,
+           // so `flutter run --release` works.
+           signingConfig signingConfigs.debug
+       }
+   }
+```
+- Lalu copas semua dengan code ini
+```
+   signingConfigs {
+       release {
+           keyAlias keystoreProperties['keyAlias']
+           keyPassword keystoreProperties['keyPassword']
+           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+           storePassword keystoreProperties['storePassword']
+       }
+   }
+   buildTypes {
+       release {
+           signingConfig signingConfigs.release
+       }
+   }
+```
+
+- Nanti hasilnya jadi seperti ini
+{% gist 6a56500ffc684e8c3c12500f180afdea %}
+
+Kode diatas diambil dari [flutter.dev](https://docs.flutter.dev/deployment/android)
+
 ### Edit file workfiles
 
 Karena file workflow yang sudah dibuat tadi hanya untuk build dan deploy ke Github, maka kita perlu mengedit file workflow tersebut untuk melakukan integrasi ke Play Console.
