@@ -224,8 +224,10 @@ Login ke PlayConsole lalu buat aplikasi baru
 ![image](https://user-images.githubusercontent.com/45744788/202114710-e6cf83f0-be25-47f9-9ad7-8bed2a9ca522.png)
 
 - Download `PEPK` tool nya, lalu letakkan di tempat dimana `keystore` tadi disimpan
+![image](https://user-images.githubusercontent.com/45744788/202117397-f0ef0de8-bcc2-4ba4-a2e7-b447fdd1266c.png)
 
-a
+
+
 
 ### Edit file workfiles
 
