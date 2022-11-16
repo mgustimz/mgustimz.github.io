@@ -120,6 +120,10 @@ Kode diatas diambil dari [flutter.dev](https://docs.flutter.dev/deployment/andro
 
 ### Signin app dan build appbundle
 
+Disini kita akan membuat 2 file yaitu `keystore.jks` dan `key.properties`, fungsi keystore untuk menandatangani aplikasi kita, sedangkan key.properties untuk menyimpan informasi dari keystore dan mennyambukan dengan app flutter kita.
+
+Kedua file ini tidak akan di push ke Github, karena juga sudah `.gitignore` secara default
+
 > Pada contoh `Langkah (Build & Deploy)` appbundles dan apk tersebut tidak dibekali dengan keystore, nah salah satu persyaratan untuk bisa upload di Play Console adalah appbundle dan apk tersebut harus dibekali dengan keystore. Jadi mari kita buat keystore dulu lalu kita sign appbundle dan apk tersebut.
 
 - Buka terminal, lalu masuk ke folder project Flutter
@@ -151,6 +155,10 @@ keytool -genkey -v -keystore D:/furniture.jks -storetype JKS -keyalg RSA -keysiz
 - Simpan file keystore tersebut di folder yang aman, karena nanti kita akan membutuhkannya untuk upload ke Play Console dan Integrasi dengan Github Action
 
 > Untuk tutorial ini saya simpan di root drive D untuk memudahkan saja
+
+One down one to go. File `keystore` sudah diamankan sekarang tinggal buat file `key.properties`
+
+
 
 
 ### Edit file workfiles
