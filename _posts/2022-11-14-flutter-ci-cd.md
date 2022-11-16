@@ -169,11 +169,25 @@ keyPassword=654321
 keyAlias=upload
 storeFile=D:/furniture.jks
 ```
+
 > `storePassword` dan `keyPassword` adalah password yang kalian catat tadi, `storePassword` adalah password keystore dan `keyPassword` adalah password alias
 
 > `keyAlias` merupakan alias yang kita set tadi
 
 > `storeFile` adalah path `keystore.jks` yang kita buat tadi karena tadi saya buat di root drive D maka saya arahkan kesana
+
+![image](https://user-images.githubusercontent.com/45744788/202102501-a09ef511-a7fb-4168-9af8-c7ce775fd0a1.png)
+
+file `keystore.jks` dan `key.properties` sudah siap, sekarang kita akan sign appbundle dan apk
+
+Jika semua sudah selesai, kita bisa sign appbundle dan apk kita dengan menjalankan perintah ini
+
+```
+flutter build appbundle
+```
+
+Tunggu beberapa saat, jika sudah selesai maka akan muncul file `app-release.aab` di folder `build/app/outputs/bundle/release`
+
 
 
 ### Edit file workfiles
