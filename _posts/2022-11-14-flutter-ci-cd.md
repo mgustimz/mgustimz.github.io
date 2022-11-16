@@ -302,7 +302,7 @@ Notice pada gist diatas ada value seperti `KEYSTORE_JKS_PROD` dan `KEY_PROPERTIE
 
 #### Encode KEYSTORE_JKS_PROD ke base64
 
-- Buka website https://base64.guru/converter/encode/file
+- Buka website [https://base64.guru/converter/encode/file](https://base64.guru/converter/encode/file)
 - Buka file lokasi file `keystore.jks` (disini saya pakai `furniture.jks`) yang sudah kita buat tadi
 - Upload file ke dalam kolom upload
 - Lalu klik tombol `Encode file to base64`
@@ -312,7 +312,7 @@ Notice pada gist diatas ada value seperti `KEYSTORE_JKS_PROD` dan `KEY_PROPERTIE
 #### Encode KEY_PROPERTIES_PROD ke base64
 - Sebelum di encode buka file `key.properties` dan ubah value `storeFile` menjadi `keystore.jks`. Karena hasil decode nama filenya nanti akan diubah secara otomatis menjadi `keystore.jks` dan tidak `furniture.jks`
 ![image](https://user-images.githubusercontent.com/45744788/202174165-56aaada4-d4bd-4f64-8ba2-e5a44f025d46.png)
-- Buka website https://base64.guru/converter/encode/file
+- Buka website [https://base64.guru/converter/encode/file](https://base64.guru/converter/encode/file)
 - Buka file lokasi file `key.properties` yang sudah kita buat tadi
 - Upload file ke dalam kolom upload
 - Lalu klik tombol `Encode file to base64`
@@ -324,8 +324,8 @@ Notice pada gist diatas ada value seperti `KEYSTORE_JKS_PROD` dan `KEY_PROPERTIE
 
 Bisa dibaca lebih lanjut disini
 
-- https://www.iwantanelephant.com/blog/2020/11/17/how-to-configure-api-access-to-google-play-console/
-- https://developers.google.com/android-publisher/getting_started
+- [https://www.iwantanelephant.com/blog/2020/11/17/how-to-configure-api-access-to-google-play-console/](https://www.iwantanelephant.com/blog/2020/11/17/how-to-configure-api-access-to-google-play-console/)
+- [https://developers.google.com/android-publisher/getting_started](https://developers.google.com/android-publisher/getting_started)
 
 - Nanti outputnya akan berbentuk json seperti ini
 ```
@@ -357,3 +357,12 @@ Bisa dibaca lebih lanjut disini
 - Masukkan nama `GOOGLE_SERVICE_JSONKEY` dan paste hasil string json dari file `services.json`
 ![image](https://user-images.githubusercontent.com/45744788/202179589-59964164-908d-4410-91bb-f080c849f7fe.png)
 
+### Pre-launch check
+
+- Jangan lupa beri permission penuh pada app yang mau di publish lewat Play Console
+![image](https://user-images.githubusercontent.com/45744788/202180579-7570ef73-95fd-4da4-b4f9-f1542ecf14f8.png)
+- Ceklis semua permission pada Account Permissions
+![image](https://user-images.githubusercontent.com/45744788/202180808-8f7a33a4-3247-44ce-b96f-85b99b3007e9.png)
+
+
+### Menjalankan Workflow
