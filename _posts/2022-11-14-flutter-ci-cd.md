@@ -135,6 +135,10 @@ keytool -genkey -v -keystore D:/furniture.jks -storetype JKS -keyalg RSA -keysiz
 > Path `D:/` berarti kita membuat keystore di `root drive D`, jika kalian ingin membuatnya di drive atau folder lainnya silahkan ganti sesuai dengan drive kalian
 
 - Akan muncul beberapa prompt yang gak penting silahkan isi sesuai keinginan kalian, jika ditanya password yang pertama catat ya, karena nanti kita akan membutuhkannya
+- Kemudian ketikkan 'yes' di akhir prompt
+![image](https://user-images.githubusercontent.com/45744788/202095905-46a12f38-d5fe-47dd-a710-7a5aa6134500.png)
+> Untuk password keystore saya: 123456 (Minimal 6 karakter)
+
 
 ### Edit file workfiles
 
