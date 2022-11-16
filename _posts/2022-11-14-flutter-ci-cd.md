@@ -368,7 +368,7 @@ Bisa dibaca lebih lanjut disini
 
 ### Menjalankan Workflow
 - Untuk mentrigger workflow buat tag baru dengan format `1.0.0` (sesuaikan dengan versi app yang mau di publish)
-- Jalankan perintah `git tag 1.0.0` untuk membuat tag baru dengan nama `v1.0.0` lalu tekan enter
+- Jalankan perintah `git tag 1.0.0` untuk membuat tag baru dengan nama `1.0.0` lalu tekan enter
 - Jalankan perintah `git push origin 1.0.0` untuk push tag ke Github lalu tekan enter
 
 ### Finishing
