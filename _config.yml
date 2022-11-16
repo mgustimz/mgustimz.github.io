@@ -21,19 +21,17 @@ theme_config:
 sass:
   style: :compressed
 
-toc:
-  min_level: 2
-  max_level: 6
-  ordered_list: false
-  no_toc_section_class: no_toc_section
-  list_id: toc
-  list_class: section-nav
-  sublist_class: ''
-  item_class: toc-entry
-  item_prefix: toc-
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-toc
+
+# TOC Settings
+toc:
+ min_level: 1
+ max_level: 3
+ list_class: toc
+ list_class: toc__list
+ sublist_class: toc__sublist
