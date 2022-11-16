@@ -116,6 +116,8 @@ Untuk caranya agak sedikit mirip untuk yang di github tapi ada beberapa hal yang
 - Nanti hasilnya jadi seperti ini
 {% gist 6a56500ffc684e8c3c12500f180afdea %}
 
+- Push repository ke Github
+
 Kode diatas diambil dari [flutter.dev](https://docs.flutter.dev/deployment/android)
 
 
@@ -290,6 +292,7 @@ Hasil jadinya akan seperti ini (copas aja, sudah self explanatory dan sudah kuka
 {% gist fde01d848eb4c8f0a950017f02295614 %}
 </details>
 
+Push file workflow yang sudah diubah tadi ke Github
 
 ### Sshh, its our Secret
 
@@ -340,3 +343,17 @@ Bisa dibaca lebih lanjut disini
 }
 ```
 - Copy hasilnya (Letakkan di Notepad atau tempat catatan lain untuk sementara)
+
+
+#### Masukkan hasil encode ke Github Secrets
+
+- Buka repository Github yang sudah kita buat tadi
+- Pada bagian Settings > Secrets > Action > New repository secret
+![image](https://user-images.githubusercontent.com/45744788/202178362-7041420d-3328-4c97-bb73-db159c5a6b3d.png)
+- Masukkan nama `KEYSTORE_JKS_PROD` dan paste hasil encode dari file `keystore.jks` tadi
+![image](https://user-images.githubusercontent.com/45744788/202178994-25c86fce-e14d-442c-8bbb-69687b1135bc.png)
+- Masukkan nama `KEY_PROPERTIES_PROD` dan paste hasil encode dari file `key.properties` tadi
+![image](https://user-images.githubusercontent.com/45744788/202179343-13cf2661-2e60-4dbd-abc5-433e688eebd0.png)
+- Masukkan nama `GOOGLE_SERVICE_JSONKEY` dan paste hasil string json dari file `services.json`
+![image](https://user-images.githubusercontent.com/45744788/202179589-59964164-908d-4410-91bb-f080c849f7fe.png)
+
