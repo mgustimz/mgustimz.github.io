@@ -226,6 +226,30 @@ Login ke PlayConsole lalu buat aplikasi baru
 - Download `PEPK` tool nya, lalu letakkan di tempat dimana `keystore` tadi disimpan
 ![image](https://user-images.githubusercontent.com/45744788/202117397-f0ef0de8-bcc2-4ba4-a2e7-b447fdd1266c.png)
 
+- Buka terminal lalu ketikkan perintah ini
+
+```
+$ java -jar pepk.jar --keystore=furniture.jks --alias=upload --output=output.zip --include-cert --encryptionkey=eb10fe8f7c7c9df715022017b00c6471f8ba8170b13049a11e6c09ffe3056a104a3bbe4ac5a955f4ba4fe93fc8cef27558a3eb9d2a529a2092761fb833b656cd48b9de6a
+```
+
+![image](https://user-images.githubusercontent.com/45744788/202118058-7fd18e8b-c3c4-4b88-adeb-cb29d3903b11.png)
+
+> `keystore` dengan value `furniture,jks` adalah nama key yang kita buat tadi, begitu juga dengan `alias` yang tadi kita namai `upload`
+
+- Pencet enter kemudian akan ditanyai 2 password tadi, masukkan keduanya dengan benar
+
+- Jika sukses maka akan ada file `output.zip`
+![image](https://user-images.githubusercontent.com/45744788/202118718-88ece3b1-342f-452a-a30e-547940910d3c.png)
+
+- Upload file ini ke dalam kolom upload untuk menset key nya
+![image](https://user-images.githubusercontent.com/45744788/202119055-829bc36f-086a-4f92-bf21-ead85f2f41d1.png)
+
+- Maka prompt akan berubah menjadi seperti ini
+![image](https://user-images.githubusercontent.com/45744788/202119180-26021626-e8b9-4f14-8c1d-261d3da14406.png)
+
+- Langkah terakhir upload aab yang digenerate dengan key ini untuk mendapatkan app id
+![image](https://user-images.githubusercontent.com/45744788/202119672-3eb45ce1-8e93-4734-a0da-834e67634920.png) 
+
 
 
 
