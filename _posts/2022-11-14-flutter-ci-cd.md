@@ -58,6 +58,29 @@ Karena kita sudah membuat konfigurasi untuk melakukan build dan deploy ketika ad
 ![image](https://user-images.githubusercontent.com/45744788/202040879-47158fe3-3191-43ff-8b25-ec5da9b5520b.png)
 
 
+Untuk CI/CD sampai Github saja selesai disini ya 🎉
+
 ## Langkah (Integrasi ke Play Console) (Opsional)
 
-Soon 🎉
+> Jika tidak punya akun Play Console, silahkan buat dulu ya harganya $25
+
+> Guide yang ini mungkin lebih advanced dari yang atas jadi bear in mind ya 😅
+
+Untuk caranya agak sedikit mirip untuk yang di github tapi ada beberapa hal yang berbeda jika sudah masuk Play Console.
+
+### Edit file workfiles
+
+Karena file workflow yang sudah dibuat tadi hanya untuk build dan deploy ke Github, maka kita perlu mengedit file workflow tersebut untuk melakukan integrasi ke Play Console.
+
+Tambahkan 2 line ini / uncomment line ini dari file yang sebelumnya sudah dibuat
+```
+- name: Decode android/neumodore_key.jks
+  run: echo "${{ secrets.KEYSTORE_JKS_PROD }}" | base64 --decode > android/app/keystore.jks
+```
+
+```
+- name: Decode android/key.properties
+  run: echo "${{ secrets.KEY_PROPERTIES_PROD }}" | base64 --decode > android/key.properties
+```
+
+> Fungsi diatas digunakan untuk mendecode file `keystore.jks` dan `key.properties` yang sudah di encode sebelumnya. Nah karena kode keystore.js dan key.properties itu sangat sensitif saya sarankan jangan dimasukkan ke version control (Github) karena bisa diakses oleh siapa saja. Jadi saya encode dulu file tersebut lalu masukkan ke Github Secrets dengan metode file ke base64 (karena github secret hanya menerima text).
