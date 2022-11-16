@@ -125,6 +125,8 @@ Disini kita akan membuat 2 file yaitu `keystore.jks` dan `key.properties`, fungs
 
 Kedua file ini tidak akan di push ke Github, karena juga sudah `.gitignore` secara default
 
+#### Membuat keystore.jks
+
 > Pada contoh `Langkah (Build & Deploy Only)` appbundles dan apk tersebut tidak dibekali dengan keystore, nah salah satu persyaratan untuk bisa upload di Play Console adalah appbundle dan apk tersebut harus dibekali dengan keystore. Jadi mari kita buat keystore dulu lalu kita sign appbundle dan apk tersebut.
 
 - Buka terminal, lalu masuk ke folder project Flutter
@@ -159,6 +161,8 @@ keytool -genkey -v -keystore D:/furniture.jks -storetype JKS -keyalg RSA -keysiz
 
 One down one to go. File `keystore.jks` sudah diamankan sekarang tinggal buat file `key.properties`
 
+#### Membuat key.properties
+
 - Pergi ke root folder aplikasi flutter kalian lalu buka folder `android`
 - Buat file dengan nama `key.properties`
 ![image](https://user-images.githubusercontent.com/45744788/202100989-a14e49c0-a8aa-4e38-99c9-2e30cdb31b74.png)
@@ -178,6 +182,8 @@ storeFile=D:/furniture.jks
 > `storeFile` adalah path `keystore.jks` yang kita buat tadi karena tadi saya buat di root drive D maka saya arahkan kesana
 
 ![image](https://user-images.githubusercontent.com/45744788/202102501-a09ef511-a7fb-4168-9af8-c7ce775fd0a1.png)
+
+#### Sign appbundle
 
 file `keystore.jks` dan `key.properties` sudah siap, sekarang kita akan sign appbundle dan apk
 
@@ -206,6 +212,7 @@ Flow nya kira kira seperti ini
 - [x]  Upload Manual 1x untuk mendapatkan app id 
 - [x]  Setup keystore yang kita buat tadi agar SHA nya sama ketika di deploy lewat Github Action
 - [x] Setelah itu bisa deploy lewat Github Action sepuasnya
+
 
 Login ke PlayConsole lalu buat aplikasi baru
 
@@ -258,7 +265,7 @@ $ java -jar pepk.jar --keystore=furniture.jks --alias=upload --output=output.zip
 Dengan ini sudah siap untuk pindah ke Github Action
 
 
-### Edit file workfiles
+### Working dengan Github Action
 
 Karena file workflow yang sudah dibuat tadi hanya untuk build dan deploy ke Github, maka kita perlu mengedit file workflow tersebut untuk melakukan integrasi ke Play Console.
 
@@ -273,7 +280,7 @@ Tambahkan 2 line ini / uncomment line ini dari file yang sebelumnya sudah dibuat
   run: echo "${{ secrets.KEY_PROPERTIES_PROD }}" | base64 --decode > android/key.properties
 ```
 
-> Fungsi diatas digunakan untuk mendecode file `keystore.jks` dan `key.properties` yang sudah di encode sebelumnya. Nah karena kode keystore.js dan key.properties itu sangat sensitif saya sarankan jangan dimasukkan ke version control (Github) karena bisa diakses oleh siapa saja. Jadi saya encode dulu file tersebut lalu masukkan ke Github Secrets dengan metode file ke base64 (karena github secret hanya menerima text).
+> Fungsi diatas digunakan untuk mendecode file `keystore.jks` dan `key.properties` yang akan kita encode pada section selanjutnya. Nah karena kode keystore.js dan key.properties itu sangat sensitif saya sarankan jangan dimasukkan ke version control (Github) karena bisa diakses oleh siapa saja. Jadi saya encode dulu file tersebut lalu masukkan ke Github Secrets dengan metode file ke base64 (karena github secret hanya menerima text).
 
 Hasil jadinya akan seperti ini (copas aja, sudah self explanatory dan sudah kukasih komen)
 
@@ -284,19 +291,46 @@ Hasil jadinya akan seperti ini (copas aja, sudah self explanatory dan sudah kuka
 </details>
 
 
-
-
 ### Sshh, its our Secret
 
 Notice pada gist diatas ada value seperti `KEYSTORE_JKS_PROD` dan `KEY_PROPERTIES_PROD`, dan `GOOGLE_SERVICE_JSONKEY` itu adalah nama yang kita buat di Github Secrets. Jadi kita perlu membuat 3 secrets dengan nama tersebut.
 
 > Kenapa gak langsung di push saja ke Github ? dont please dont. Karena file `keystore.jks`, `key.properties`, dan `services.json` itu sangat sensitif, jadi jangan sampai ada orang yang bisa mengakses file tersebut. Jadi kita encode dulu file tersebut lalu masukkan ke Github Secrets dengan metode file ke base64 (karena github secret hanya menerima text).
 
-#### KEYSTORE_JKS_PROD
+#### Encode KEYSTORE_JKS_PROD ke base64
 - Buka website https://base64.guru/converter/encode/file
 - Buka file lokasi file `keystore.jks` (disini saya pakai `furniture.jks`) yang sudah kita buat tadi
 - Upload file ke dalam kolom upload
 - Lalu klik tombol `Encode file to base64`
 ![image](https://user-images.githubusercontent.com/45744788/202133848-2e49c036-4812-4baa-9b33-baa684b0c5f8.png)
-- Copy hasilnya
+- Copy hasilnya (Letakkan di Notepad atau tempat catatan lain untuk sementara)
 
+#### Encode KEY_PROPERTIES_PROD ke base64
+- Buka website https://base64.guru/converter/encode/file
+- Buka file lokasi file `key.properties` yang sudah kita buat tadi
+- Upload file ke dalam kolom upload
+- Lalu klik tombol `Encode file to base64`
+![image](https://user-images.githubusercontent.com/45744788/202134100-5b9c6f9f-1b8d-4b9b-9b9b-3b2b2b2b2b2b.png)
+- Copy hasilnya (Letakkan di Notepad atau tempat catatan lain untuk sementara)
+
+
+#### Mendapatkan Google Service Json Key
+
+- https://www.iwantanelephant.com/blog/2020/11/17/how-to-configure-api-access-to-google-play-console/
+- https://developers.google.com/android-publisher/getting_started
+
+Nanti outputnya akan berbentuk json seperti ini
+```
+{
+  "type": "service_account",
+  "project_id": "xxx",
+  "private_key_id": "xxxx",
+  "private_key": "-----BEGIN PRIVATE KEY-----\xxx\n-----END PRIVATE KEY-----\n",
+  "client_email": "xxx",
+  "client_id": "xxx",
+  "auth_uri": "xxx",
+  "token_uri": "xxx",
+  "auth_provider_x509_cert_url": "xxx",
+  "client_x509_cert_url": "xxx"
+}
+```
