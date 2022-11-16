@@ -199,6 +199,8 @@ Ini adalah app yang sudah di sign dengan keystore yang kita buat tadi
 
 > Tujuan section ini adalah untuk mendapatkan appid yang akan kita gunakan untuk integrasi dengan Github Action, serta Mensetup keystore yang kita generate tadi dengan PlayConsole.
 
+> Disini saya menggunakan mode `Internal testing` jika ingin menggunakan mode perilisan lainnya silahkan disesuaikan
+
 Flow nya kira kira seperti ini
 - [x]  Upload Manual 1x untuk mendapatkan app id 
 - [x]  Setup keystore yang kita buat tadi agar SHA nya sama ketika di deploy lewat Github Action
@@ -206,6 +208,24 @@ Flow nya kira kira seperti ini
 
 Login ke PlayConsole lalu buat aplikasi baru
 
+- Isikan nama aplikasi, dll lalu `Create`
+- Pilih `Internal testing` pada sidebar `Play Console`
+- Lalu `Create a new release`
+
+![image](https://user-images.githubusercontent.com/45744788/202113275-062d5ef4-3e06-48b0-a9eb-7af7f7fa7f36.png)
+
+- Ganti metode app signin menggunakan keystore yang sudah kita buat tadi agar tidak ter generate otomatis oleh Google
+![image](https://user-images.githubusercontent.com/45744788/202113780-cb85d159-0758-4df1-a8b7-991fa6597d25.png)
+
+- Pilih `Use a different key`
+![image](https://user-images.githubusercontent.com/45744788/202114282-5f9651cd-b1e8-46ff-8efa-4ac29da7f982.png)
+
+- Lalu pilih yang `Export and upload from Java keystore`
+![image](https://user-images.githubusercontent.com/45744788/202114710-e6cf83f0-be25-47f9-9ad7-8bed2a9ca522.png)
+
+- Download `PEPK` tool nya, lalu letakkan di tempat dimana `keystore` tadi disimpan
+
+a
 
 ### Edit file workfiles
 
