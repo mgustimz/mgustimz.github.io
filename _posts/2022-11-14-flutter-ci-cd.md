@@ -200,12 +200,9 @@ Ini adalah app yang sudah di sign dengan keystore yang kita buat tadi
 > Tujuan section ini adalah untuk mendapatkan appid yang akan kita gunakan untuk integrasi dengan Github Action, serta Mensetup keystore yang kita generate tadi dengan PlayConsole.
 
 Flow nya kira kira seperti ini
-
-[ x ]  Upload Manual 1x untuk mendapatkan app id 
-
-[ x ]  Setup keystore yang kita buat tadi agar SHA nya sama ketika di deploy lewat Github Action
-
-[ x ] Setelah itu bisa deploy lewat Github Action sepuasnya
+- [x]  Upload Manual 1x untuk mendapatkan app id 
+- [x]  Setup keystore yang kita buat tadi agar SHA nya sama ketika di deploy lewat Github Action
+- [x] Setelah itu bisa deploy lewat Github Action sepuasnya
 
 Login ke PlayConsole lalu buat aplikasi baru
 
