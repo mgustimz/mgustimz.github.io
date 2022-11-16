@@ -64,6 +64,8 @@ Untuk CI/CD sampai Github saja selesai disini ya 🎉
 
 > Guide yang ini mungkin lebih advanced dari yang atas jadi bear in mind ya 😅
 
+> Guide ini hanya untuk Windows, untuk MacOS dan Linux silahkan cari sendiri ya tapi harusnya sih mirip mirip. atau kalau mau berkontribusi kalau tau caranya untuk Linux dan MacOS silahkan PR ke repo ini ya
+
 Untuk caranya agak sedikit mirip untuk yang di github tapi ada beberapa hal yang berbeda jika sudah masuk Play Console.
 
 
@@ -130,7 +132,9 @@ keytool -genkey -v -keystore D:/furniture.jks -storetype JKS -keyalg RSA -keysiz
 
 > Keystore `furniture.jks` bisa diganti dengan nama apapun yang kalian inginkan begitu juga dengan alias `upload`
 
-> Path D:/ berarti kita membuat keystore di root drive D, jika kalian ingin membuatnya di drive lainnya silahkan ganti sesuai dengan drive kalian
+> Path `D:/` berarti kita membuat keystore di `root drive D`, jika kalian ingin membuatnya di drive atau folder lainnya silahkan ganti sesuai dengan drive kalian
+
+- Akan muncul beberapa prompt yang gak penting silahkan isi sesuai keinginan kalian, jika ditanya password yang pertama catat ya, karena nanti kita akan membutuhkannya
 
 ### Edit file workfiles
 
