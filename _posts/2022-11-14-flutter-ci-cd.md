@@ -257,8 +257,6 @@ $ java -jar pepk.jar --keystore=furniture.jks --alias=upload --output=output.zip
 Dengan ini sudah siap untuk pindah ke Github Action
 
 
-
-
 ### Edit file workfiles
 
 Karena file workflow yang sudah dibuat tadi hanya untuk build dan deploy ke Github, maka kita perlu mengedit file workflow tersebut untuk melakukan integrasi ke Play Console.
