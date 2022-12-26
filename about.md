@@ -3,8 +3,8 @@ layout: page
 title: About
 ---
 
-Hey, I'm Novian Andika! 👋🏽
+I am a Flutter (also Webdev) developer with a passion for building beautiful, performant, and scalable mobile applications. With my strong foundation in computer science and experience with a variety of programming languages, I am able to quickly pick up new technologies and deliver high-quality results.
 
-I'm a developer based in Yogyakarta, Indonesia who has a passion to build things that impact people's day to day lives to make them better.
+I have a track record of success in building and launching Flutter apps that have received positive user reviews and have been featured on the App Store and Google Play. I am always seeking out opportunities to learn and grow as a developer, and I am excited to continue building my skills in Flutter and other modern technologies.
 
-In the future, my plan is to start a tech startup to bring my love of coding and entrepreneurship together.
+In my free time, I enjoy contributing to open-source projects and staying up-to-date with the latest trends and best practices in the tech industry.
