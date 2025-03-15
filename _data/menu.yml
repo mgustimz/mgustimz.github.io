@@ -4,13 +4,13 @@ entries:
       - title: more about me 
         url: /about
       - title: email 
-        url: mailto:hello@fleetime.my.id
+        url: mailto:mgustimz@gmail.com
       - title: linkedin
-        url: https://www.linkedin.com/in/fleetime/
+        url: https://www.linkedin.com/in/mgustimz/
       - title: github 
-        url: https://github.com/fleetimee/
-      - title: twitter 
-        url: https://twitter.com/fleetimee
+        url: https://github.com/mgustimz/
+      - title: x 
+        url: https://x.com/mgustimz
 
   - title: writing
     post_list : true
