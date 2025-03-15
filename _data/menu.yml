@@ -15,10 +15,10 @@ entries:
         url: https://drive.google.com/file/d/1mGzUikkZXhiOch6Mfswp395zhIRDj31K/view?usp=sharing
 
   - title: blog
-    post_list : true
-    limit: 2
-    show_more: true
-    show_more_text: See more...
-    show_more_url: /archive
+    post_list:
+      limit: 2
+      show_more: true
+      show_more_text: See more...
+      show_more_url: /archive
 
  
