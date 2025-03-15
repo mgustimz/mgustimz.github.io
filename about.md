@@ -3,8 +3,15 @@ layout: page
 title: About
 ---
 
-I am a Flutter (also Webdev) developer with a passion for building beautiful, performant, and scalable mobile applications. With my strong foundation in computer science and experience with a variety of programming languages, I am able to quickly pick up new technologies and deliver high-quality results.
+Welcome! I'm a passionate **Software Engineer** with expertise in **backend development**, primarily working with **Java**, **Spring Boot**, and **SQL**. My experience spans across designing scalable applications, optimizing database queries, and integrating APIs to build high-performance systems.
 
-I have a track record of success in building and launching Flutter apps that have received positive user reviews and have been featured on the App Store and Google Play. I am always seeking out opportunities to learn and grow as a developer, and I am excited to continue building my skills in Flutter and other modern technologies.
+## My Tech Stack
+- **Languages:** Java, SQL
+- **Frameworks:** Spring Boot
+- **Databases:** PostgreSQL, MySQL, Oracle, Redis
+- **Cloud & DevOps:** AWS, Docker, Kubernetes
+- **Tools & Other Technologies:** Apache Kafka
 
-In my free time, I enjoy contributing to open-source projects and staying up-to-date with the latest trends and best practices in the tech industry.
+I love solving complex problems through clean, maintainable code and optimizing application performance. Whether it's building **robust APIs**, working with **microservices architecture**, or improving **database efficiency**, I strive to create scalable and efficient software solutions.
+
+Outside of coding, I'm continuously learning new technologies to enhance my skills.

@@ -11,8 +11,14 @@ entries:
         url: https://github.com/mgustimz/
       - title: x 
         url: https://x.com/mgustimz
+      - title: My CV
+        url: https://drive.google.com/file/d/1mGzUikkZXhiOch6Mfswp395zhIRDj31K/view?usp=sharing
 
-  - title: writing
+  - title: blog
     post_list : true
+    limit: 5
+    show_more: true
+    show_more_text: See more...
+    show_more_url: /archive
 
  
