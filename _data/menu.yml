@@ -1,24 +1,24 @@
 entries:
   - title: me
     entries:
-      - title: about me 
+      - title: about me
         url: /about
-      - title: email 
+      - title: email
         url: mailto:mgustimz@gmail.com
-      - title: linkedin 
+      - title: linkedin
         url: https://www.linkedin.com/in/mgustimz/
-      - title: github 
+      - title: github
         url: https://github.com/mgustimz/
-      - title: x 
+      - title: x
         url: https://x.com/mgustimz
-      - title: instagram 
+      - title: instagram
         url: https://www.instagram.com/mgustimz
-      - title: My CV 
+      - title: My CV
         url: https://drive.google.com/file/d/1mGzUikkZXhiOch6Mfswp395zhIRDj31K/view?usp=sharing
 
   - title: blog
     post_list:
-      limit: 2
+      limit: 5
       show_more: true
       show_more_text: See more...
       show_more_url: /archive
