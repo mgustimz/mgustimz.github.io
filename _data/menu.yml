@@ -18,7 +18,7 @@ entries:
 
   - title: blog
     post_list:
-      limit: 5
+      limit: 2
       show_more: true
       show_more_text: See more...
       show_more_url: /archive
