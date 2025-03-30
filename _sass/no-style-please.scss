@@ -1,10 +1,11 @@
 /* -------------- THEME SWITCHER -------------- */
 @mixin dark-appearance {
-  filter: invert(1);
+  background-color: #1a1a1a; /* Dark background */
+  color: #fff; /* Light text */
   img {
-    filter: invert(1);
+    filter: invert(1); /* Invert images if needed */
     &.ioda {
-      filter: invert(0);
+      filter: invert(0); /* Exception for .ioda images */
     }
   }
 }
@@ -22,7 +23,7 @@ body[data-theme="dark"] {
 /* -------------------------------------------- */
 html,
 body {
-  background: white;
+  background: white; /* Light mode default */
 }
 
 html {
@@ -30,7 +31,7 @@ html {
 }
 
 body {
-  color: black;
+  color: black; /* Light mode default */
   font-family: monospace;
   font-size: 16px;
   line-height: 1.4;
@@ -91,14 +92,24 @@ table {
 table,
 th,
 td {
-  border: thin solid black;
+  border: thin solid black; /* Light mode */
   border-collapse: collapse;
   padding: 0.4rem;
+}
+
+body[data-theme="dark"] table,
+body[data-theme="dark"] th,
+body[data-theme="dark"] td {
+  border-color: #fff; /* Dark mode */
 }
 
 code {
   color: white;
   background: black;
+}
+
+body[data-theme="dark"] code {
+  background: #333; /* Slightly lighter for dark mode */
 }
 
 div.highlighter-rouge code {
@@ -110,24 +121,21 @@ div.highlighter-rouge code {
 
 blockquote {
   font-style: italic;
-  border: thin solid black;
+  border: thin solid black; /* Light mode */
   padding: 1rem;
   p {
     margin: 0;
   }
 }
 
-img {
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
+body[data-theme="dark"] blockquote {
+  border-color: #fff; /* Dark mode */
 }
 
 /* Wrapper for mode button */
 #mode-wrapper {
-  position: static; /* No interference with button’s fixed positioning */
-  filter: none !important; /* Prevent body’s filter from applying */
-  z-index: 1000; /* Ensure it’s above other content */
+  position: static;
+  z-index: 1000;
 }
 
 /* Mode button styles */
@@ -137,7 +145,7 @@ img {
   top: 1rem;
   right: 1rem;
   font-size: 1.5rem;
-  z-index: 1001; /* Slightly higher than wrapper */
+  z-index: 1001;
   border: 2px solid #fff;
   border-radius: 100%;
   transform: rotate(45deg);
@@ -145,13 +153,11 @@ img {
   cursor: pointer;
 }
 
-/* Dark mode: Ensure button remains unaffected */
+/* Dark mode button styles */
 body[data-theme="dark"] #mode-wrapper #mode {
-  position: fixed !important;
   background: transparent;
   border-color: #fff;
   color: #fff;
-  filter: none !important;
 }
 
 /* Style the span inside the button */
