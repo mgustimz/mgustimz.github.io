@@ -1,4 +1,4 @@
-// -------------- THEME SWITCHER -------------- //
+/* -------------- THEME SWITCHER -------------- */
 @mixin dark-appearance {
   filter: invert(1);
   img {
@@ -8,25 +8,27 @@
     }
   }
 }
+
 body[data-theme="dark"] {
   @include dark-appearance;
 }
+
 @media (prefers-color-scheme: dark) {
   body[data-theme="auto"] {
     @include dark-appearance;
   }
 }
-// -------------------------------------------- //
-// bg color is also needed in html in order to
-// block body's background propagation
-// see: https://stackoverflow.com/a/61265706
+
+/* -------------------------------------------- */
 html,
 body {
-  background: white;
+  background: white; /* Blocks body's background propagation */
 }
+
 html {
   height: 100%;
 }
+
 body {
   color: black;
   font-family: monospace;
@@ -36,9 +38,11 @@ body {
   min-height: 100%;
   overflow-wrap: break-word;
 }
+
 .post-meta {
   text-align: right;
 }
+
 h2,
 h3,
 h4,
@@ -46,23 +50,29 @@ h5,
 h6 {
   margin-top: 3rem;
 }
+
 hr {
   margin: 2rem 0;
 }
+
 p {
   margin: 1rem 0;
 }
+
 li {
   margin: 0.4rem 0;
 }
+
 *:target {
   background: yellow;
 }
+
 .w {
   max-width: 640px;
   margin: 0 auto;
   padding: 4rem 2rem;
 }
+
 hr {
   text-align: center;
   border: 0;
@@ -73,9 +83,11 @@ hr {
     content: attr(data-content) "/////";
   }
 }
+
 table {
   width: 100%;
 }
+
 table,
 th,
 td {
@@ -83,16 +95,19 @@ td {
   border-collapse: collapse;
   padding: 0.4rem;
 }
+
 code {
   color: white;
   background: black;
 }
+
 div.highlighter-rouge code {
   display: block;
   overflow-x: auto;
   white-space: pre-wrap;
   padding: 1rem;
 }
+
 blockquote {
   font-style: italic;
   border: thin solid black;
@@ -101,20 +116,33 @@ blockquote {
     margin: 0;
   }
 }
+
 img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
 }
-// mode button rounded
+
+/* Mode button styles */
 #mode {
   background: white;
-  position: fixed;
+  position: fixed; /* Ensure it follows scroll */
   top: 1rem;
   right: 1rem;
   font-size: 1.5rem;
-  z-index: 100;
+  z-index: 100; /* Stays above other content */
   border: 2px solid #fff;
   border-radius: 100%;
   transform: rotate(45deg);
+  padding: 0.5rem; /* Optional: Better clickable area */
+  cursor: pointer; /* Indicates it's clickable */
+}
+
+/* Dark mode specific styles for the button */
+body[data-theme="dark"] #mode {
+  position: fixed; /* Reinforce fixed positioning */
+  background: #333; /* Darker background for dark mode */
+  border-color: #fff; /* Keep border visible */
+  color: #fff; /* Ensure text/icon visibility */
+  filter: none; /* Prevent filter: invert(1) from affecting the button */
 }
