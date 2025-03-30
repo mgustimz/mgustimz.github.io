@@ -7,6 +7,11 @@
       filter: invert(0);
     }
   }
+
+  // Prevent button from being affected
+  #mode {
+    filter: invert(0);
+  }
 }
 body[data-theme="dark"] {
   @include dark-appearance;
@@ -117,4 +122,15 @@ img {
   border: 2px solid #fff;
   border-radius: 100%;
   transform: rotate(45deg);
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+// Ensure button is fixed in dark mode
+body[data-theme="dark"] #mode {
+  position: fixed;
+  background: #222;
+  color: white;
+  border-color: white;
 }
