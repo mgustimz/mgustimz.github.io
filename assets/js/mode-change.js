@@ -14,6 +14,8 @@ function changeMode() {
     
     const modeButton = document.getElementById("mode");
     console.log("Button position after switch:", window.getComputedStyle(modeButton).position);
+    const wrapper = document.getElementById("mode-wrapper");
+    console.log("Wrapper position:", window.getComputedStyle(wrapper).position);
 }
 
 // Get cookie by name

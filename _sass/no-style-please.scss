@@ -123,14 +123,21 @@ img {
   margin: 0 auto;
 }
 
+/* Wrapper for mode button */
+#mode-wrapper {
+  position: static; /* No interference with button’s fixed positioning */
+  filter: none !important; /* Prevent body’s filter from applying */
+  z-index: 1000; /* Ensure it’s above other content */
+}
+
 /* Mode button styles */
-#mode {
+#mode-wrapper #mode {
   background: white;
   position: fixed;
   top: 1rem;
   right: 1rem;
   font-size: 1.5rem;
-  z-index: 1000;
+  z-index: 1001; /* Slightly higher than wrapper */
   border: 2px solid #fff;
   border-radius: 100%;
   transform: rotate(45deg);
@@ -138,13 +145,13 @@ img {
   cursor: pointer;
 }
 
-/* Dark mode: Override body filter and ensure fixed positioning */
-body[data-theme="dark"] #mode {
+/* Dark mode: Ensure button remains unaffected */
+body[data-theme="dark"] #mode-wrapper #mode {
   position: fixed !important;
   background: transparent;
   border-color: #fff;
   color: #fff;
-  filter: none !important; /* Override body's filter */
+  filter: none !important;
 }
 
 /* Style the span inside the button */
