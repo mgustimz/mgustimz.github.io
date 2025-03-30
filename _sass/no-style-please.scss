@@ -130,19 +130,24 @@ img {
   top: 1rem;
   right: 1rem;
   font-size: 1.5rem;
-  z-index: 100; /* Stays above other content */
+  z-index: 1000; /* High z-index to stay above content */
   border: 2px solid #fff;
   border-radius: 100%;
   transform: rotate(45deg);
-  padding: 0.5rem; /* Optional: Better clickable area */
-  cursor: pointer; /* Indicates it's clickable */
+  padding: 0.5rem; /* Better clickable area */
+  cursor: pointer;
 }
 
 /* Dark mode specific styles for the button */
 body[data-theme="dark"] #mode {
-  position: fixed; /* Reinforce fixed positioning */
-  background: #333; /* Darker background for dark mode */
-  border-color: #fff; /* Keep border visible */
-  color: #fff; /* Ensure text/icon visibility */
+  position: fixed !important; /* Force fixed positioning */
+  background: transparent; /* Remove solid background for emoji */
+  border-color: #fff;
+  color: #fff; /* Ensure emoji is white */
   filter: none; /* Prevent filter: invert(1) from affecting the button */
+}
+
+/* Style the span inside the button */
+#mode-text {
+  display: block; /* Ensure it fills the button */
 }

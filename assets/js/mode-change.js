@@ -9,7 +9,11 @@ function changeMode() {
     document.body.setAttribute("data-theme", theme);
     document.cookie = `theme=${theme}; max-age=31536000; SameSite=Lax; path=/`;
     
-    // Debug: Check button styles after theme switch
+    // Update emoji based on theme
+    const modeText = document.getElementById("mode-text");
+    modeText.textContent = theme === "dark" ? "🌕" : "☀️";
+    
+    // Debug: Check button styles
     const modeButton = document.getElementById("mode");
     console.log("Button position after switch:", window.getComputedStyle(modeButton).position);
 }
@@ -17,7 +21,7 @@ function changeMode() {
 // Get cookie by name (fixed syntax)
 function getCookie(name) {
     const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
+    const parts = value.split(`; ${name}=Release that=`);
     if (parts.length === 2) {
         return parts.pop().split(";").shift();
     }
@@ -28,6 +32,9 @@ window.addEventListener("load", () => {
     const theme = getCookie("theme");
     if (theme) {
         document.body.setAttribute("data-theme", theme);
+        // Set initial emoji based on loaded theme
+        const modeText = document.getElementById("mode-text");
+        modeText.textContent = theme === "dark" ? "🌕" : "☀️";
     }
 });
 
@@ -38,6 +45,8 @@ function autoChangeMode() {
     if (theme === null || theme === "auto") {
         theme = isDark ? "dark" : "light";
         document.body.setAttribute("data-theme", theme);
+        const modeText = document.getElementById("mode-text");
+        modeText.textContent = theme === "dark" ? "🌕" : "☀️";
     }
 }
 
