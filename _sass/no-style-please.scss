@@ -22,7 +22,7 @@ body[data-theme="dark"] {
 /* -------------------------------------------- */
 html,
 body {
-  background: white; /* Blocks body's background propagation */
+  background: white;
 }
 
 html {
@@ -126,28 +126,28 @@ img {
 /* Mode button styles */
 #mode {
   background: white;
-  position: fixed; /* Ensure it follows scroll */
+  position: fixed;
   top: 1rem;
   right: 1rem;
   font-size: 1.5rem;
-  z-index: 1000; /* High z-index to stay above content */
+  z-index: 1000;
   border: 2px solid #fff;
   border-radius: 100%;
   transform: rotate(45deg);
-  padding: 0.5rem; /* Better clickable area */
+  padding: 0.5rem;
   cursor: pointer;
 }
 
-/* Dark mode specific styles for the button */
+/* Dark mode: Override body filter and ensure fixed positioning */
 body[data-theme="dark"] #mode {
-  position: fixed !important; /* Force fixed positioning */
-  background: transparent; /* Remove solid background for emoji */
+  position: fixed !important;
+  background: transparent;
   border-color: #fff;
-  color: #fff; /* Ensure emoji is white */
-  filter: none; /* Prevent filter: invert(1) from affecting the button */
+  color: #fff;
+  filter: none !important; /* Override body's filter */
 }
 
 /* Style the span inside the button */
 #mode-text {
-  display: block; /* Ensure it fills the button */
+  display: block;
 }

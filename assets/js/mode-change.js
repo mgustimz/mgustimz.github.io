@@ -9,30 +9,27 @@ function changeMode() {
     document.body.setAttribute("data-theme", theme);
     document.cookie = `theme=${theme}; max-age=31536000; SameSite=Lax; path=/`;
     
-    // Update emoji based on theme
     const modeText = document.getElementById("mode-text");
     modeText.textContent = theme === "dark" ? "🌕" : "☀️";
     
-    // Debug: Check button styles
     const modeButton = document.getElementById("mode");
     console.log("Button position after switch:", window.getComputedStyle(modeButton).position);
 }
 
-// Get cookie by name (fixed syntax)
+// Get cookie by name
 function getCookie(name) {
     const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=Release that=`);
+    const parts = value.split(`; ${name}=`);
     if (parts.length === 2) {
         return parts.pop().split(";").shift();
     }
 }
 
-// Add event load to check cookie for theme preference and set the theme
+// Set theme and emoji on load
 window.addEventListener("load", () => {
     const theme = getCookie("theme");
     if (theme) {
         document.body.setAttribute("data-theme", theme);
-        // Set initial emoji based on loaded theme
         const modeText = document.getElementById("mode-text");
         modeText.textContent = theme === "dark" ? "🌕" : "☀️";
     }
@@ -50,10 +47,8 @@ function autoChangeMode() {
     }
 }
 
-// Make it priority to load before other scripts
+// Add event listeners
 document.addEventListener("DOMContentLoaded", function () {
-    // Add event listener to mode button
     document.getElementById("mode").addEventListener("click", changeMode);
-    // Add event listener for system theme changes
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", autoChangeMode);
 });
